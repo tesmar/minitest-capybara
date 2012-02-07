@@ -9,8 +9,12 @@ module MiniTest
 
             javascript_block = proc do
               Capybara.current_driver = :selenium
+            begin
               block.call
+            ensure
               Capybara.current_driver = :rack_test
+            end
+
             end
 
             self.it_old desc, &javascript_block
