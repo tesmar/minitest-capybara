@@ -8,3 +8,5 @@ task :test do
   end
   task("unittests").execute
 end
+
+task :default => :test
