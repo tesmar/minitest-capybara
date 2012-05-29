@@ -8,7 +8,7 @@ module MiniTest
           if params[:js] == true
 
             javascript_block = proc do
-              Capybara.current_driver = :selenium
+              Capybara.current_driver = :webkit
             begin
               block.call
             ensure
